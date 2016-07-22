@@ -1,0 +1,94 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jelenarakic/breakable-toy/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/jelenarakic/breakable-toy/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jelenarakic/breakable-toy/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jelenarakic/breakable-toy/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jelenarakic/breakable-toy/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/jelenarakic/breakable-toy/app/controllers/pet_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/jelenarakic/breakable-toy/app/models/pet.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1469042117
+  }
+}
