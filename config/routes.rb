@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_scope :user do
-    root to: "devise/registrations#new"
-  end
+  root to: "welcome#index"
   devise_for :users
   resources :pets, only: [:index, :search, :show]
 end

@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20160721150123) do
   enable_extension "plpgsql"
 
   create_table "pets", force: :cascade do |t|
-    t.string   "type",        null: false
+    t.integer  "animal_type", null: false
     t.string   "breed",       null: false
     t.integer  "age",         null: false
+    t.integer  "sex",         null: false
     t.string   "name",        null: false
+    t.string   "location",    null: false
     t.text     "description", null: false
     t.integer  "shelter_id",  null: false
     t.datetime "created_at",  null: false
