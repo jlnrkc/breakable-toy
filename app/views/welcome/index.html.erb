@@ -1,0 +1,7 @@
+<nav>
+  <% if !user_signed_in? %>
+    <%= link_to "Log In", new_user_session_path, class: 'round-button' %>
+    <%= link_to "Sign Up", new_user_registration_path, class: 'round-button' %>
+    <%= link_to "About Us", new_user_registration_path, class: 'round-button' %>
+  <% end %>
+</nav>
