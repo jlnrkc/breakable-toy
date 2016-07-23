@@ -1,0 +1,12 @@
+<h2>Welcome to Paws</h2>
+<p>If you're looking to adopt a pet, this site will help you find exactly what you're looking for! Sign up and see the animals looking for homes.</p>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if user_signed_in? %>
+  <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
+<% end %>

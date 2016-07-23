@@ -1,0 +1,23 @@
+.round-button {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  line-height: 30vh;
+  text-align: center;
+  margin: (10/4) + vh;
+  color: #fff;
+  background-color: #75616b;
+	border-radius: 50%;
+	width: 30vh;
+	height: 30vh;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 5vh;
+  font-weight: 200;
+  opacity: 0.5;
+  transition: opacity .5s;
+  text-decoration: none;
+
+  &:hover {
+    opacity: .9;
+  }
+}
