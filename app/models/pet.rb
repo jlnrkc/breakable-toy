@@ -1,39 +1,19 @@
 class Pet < ActiveRecord::Base
 
-  AnimalType = [
-    ['barnyard'],
-    ['bird'],
-    ['cat'],
-    ['dog'],
-    ['horse'],
-    ['pig'],
-    ['reptile'],
-    ['smallfurry']
-  ]
-
-  Age = [
-    ['baby'],
-    ['young'],
-    ['adult'],
-    ['senior']
-  ]
-
-  Sex = [
-    ['male'],
-    ['female']
-  ]
+  ANIMAL_TYPES = %w(barnyard bird cat dog horse pig reptile smallfurry)
+  AGES = %w(baby young adult senior)
+  SEXES = %w(male female)
+  SIZES = %w(small medium large)
 
   belongs_to :shelter
-  has_many :faves
+  has_many :faves, destroy: true 
 
-  validates :animal_type, presence: true
-  validates :breed, presence: true
-  validates :age, presence: true
-  validates :sex, presence: true
-  validates :name, presence: true
-  validates :location, presence: true
-  validates :description, presence: true
-  validates :shelter_id, presence: true
+  validates :animal_type, :breed, :age, :sex, :name, :location, :description, :shelter_id, presence: true
+
+  enum sex: SEXES
+  enum age: AGES
+  enum animal_type: ANIMAL_TYPES
+  enum size: SIZES
 
 
   include HTTParty
@@ -71,4 +51,6 @@ class Pet < ActiveRecord::Base
   def self.find_by_shelter_list_breed(shelter_ids)
     get('/shelter.listByBreed', :query => { key: "95c16e6439121fe454652ef459cb057e", :animal => shelter_ids, :breed => shelter_ids, :format => 'json' })
   end
+
+  def self.
 end

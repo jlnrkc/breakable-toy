@@ -1,4 +1,4 @@
-<h4> Log In</h4>
+<h4>Log In</h4>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -23,12 +23,14 @@
   </div>
   <br>
 
-  <div class=log>
+  <div class=nav>
   <% if user_signed_in? %>
-    <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
+    <p><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'round-button' %></p>
   <% end %>
 
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%= link_to "Go Home", root_path, class: 'round-button' %>
