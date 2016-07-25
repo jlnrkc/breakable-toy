@@ -9,8 +9,6 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-
-
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -30,13 +28,15 @@
   </div>
   <br>
 
-  <div class="log">
+  <div class="nav">
     <% if user_signed_in? %>
-      <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
+      <p><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'round-button' %></p>
     <% end %>
   </div>
 </div>
 
 <% end %>
+
+<%= link_to "Go Home", root_path, class: 'round-button' %>
 
 <%= render "devise/shared/links" %>
