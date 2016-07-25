@@ -3,8 +3,14 @@ class PetsController < ApplicationController
   before_action :authorize_user, only: [:destroy]
 
   def search
-    @results = Pet.where("name ILIKE ?", "%#{params[:q]}%")
-    render :search
+    @pets = Pet.all
+    @pets = @pets.where(animal_type: params[:animal_type]) if params[:animal_type].present?
+    @pets = @pets.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
+    @pets = @pets.where(age: params[:age]) if params[:age].present?
+    @pets = @pets.where(size: params[:size]) if params[:size].present?
+    @pets = @pets.where(sex: params[:sex]) if params[:sex].present?
+    @pets = @pets.where("name ILIKE ?", "%#{params[:name]}%") if params[:name].present?
+    @pets = @pets.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
   end
 
   def index
