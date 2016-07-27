@@ -12,6 +12,7 @@ gem 'paperclip', '~> 4.2'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do
