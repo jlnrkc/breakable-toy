@@ -5,6 +5,7 @@ class Pets < ActiveRecord::Migration
       t.string :breed
       t.integer :age
       t.integer :sex
+      t.string :size
       t.string :name, null: false
       t.string :location
       t.text :description
