@@ -8,20 +8,20 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'httparty'
-gem "paperclip", "~> 4.2"
+gem 'paperclip', '~> 4.2'
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'coveralls', require: false
 end
 
 group :test do
-  gem 'launchy', require: false
   gem 'shoulda'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'valid_attribute'
+  gem 'launchy', require: false
+  gem 'coveralls', require: false
 end
 
 group :production do
