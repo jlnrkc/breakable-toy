@@ -10,7 +10,7 @@ class PetsController < ApplicationController
     @pets = @pets.where(size: params[:size]) if params[:size].present?
     @pets = @pets.where(sex: params[:sex]) if params[:sex].present?
     @pets = @pets.where("name ILIKE ?", "%#{params[:name]}%") if params[:name].present?
-    @pets = @pets.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
+    @pets = @pets.where(location: params[:location]) if params[:location].present?
   end
 
   def index
@@ -51,7 +51,10 @@ def pet_params
     :type,
     :breed,
     :age,
+    :size,
+    :sex,
     :name,
+    :location,
     :description
   )
 end

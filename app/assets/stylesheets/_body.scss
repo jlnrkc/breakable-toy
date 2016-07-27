@@ -1,0 +1,27 @@
+body {
+  background-image: image-url("bwcat.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+main {
+  background: rgba(255, 255, 255, .5);
+  margin: 5vh 10vh 10vh 43vh;
+  padding: 5vh;
+}
+
+.password {
+  font-size: 11px;
+}
+
+.greeting {
+  text-align: right;
+}
+
+h2 {
+  text-align: center;
+}

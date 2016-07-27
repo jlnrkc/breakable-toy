@@ -1,14 +1,8 @@
-<nav>
-  <% if !user_signed_in? %>
-    <%= link_to "Log In", new_user_session_path, class: 'round-button' %>
-    <%= link_to "Sign Up", new_user_registration_path, class: 'round-button' %>
-  <% end %>
-
-  <% if user_signed_in? %>
-    <%= link_to "Search", pets_path, class: 'round-button' %>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'round-button' %>
-  <% end %>
-
-  <%= link_to "Go Home", root_path, class: 'round-button' %>
-
-</nav>
+<div class="row">
+  <div class="small-12 columns">
+    <h3>Fellow animal lover</h3>
+      <p>There are over 300,000 pets currently living in shelters across the country that are in need of a home. This site allows Massachusetts residents to seamlessly search for pets available for adoption currently in the shelters in the surrounding area. There are around 120 adoption groups in MA alone. Even if each shelter housed only a couple of animals, that't still too many homeless animals!</p>
+      <p> If stats are not your thing, and you're still not convinced, please sign up and take a look at the cuties available for adoption in your area alone.</p>
+    </div>
+  </div>
+</div>
