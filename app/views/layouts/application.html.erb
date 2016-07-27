@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Paws</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-</body>
+  <head>
+    <title>Paws</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <%= render partial: 'shared/navigation' %>
+    <main>
+      <%- flash.each do |type, val| %>
+        <div data-closable class="callout<%= ' alert' if type == 'error' %><%= ' warning' if type == 'alert' %><%= ' success' if type == 'notice' %>">
+          <%= val %>
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <%- end %>
+      <%= yield %>
+    </main>
+    <%= javascript_include_tag 'application', 'modernizer' %>
+  </body>
 </html>
