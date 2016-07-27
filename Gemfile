@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'httparty'
+gem "paperclip", "~> 4.2"
 
 group :development, :test do
   gem 'pry-rails'

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :pets, only: [:index, :show]
+  resources :photos, only: [:new, :create, :index, :destroy]
   get :search, to: 'pets#search', as: :pets_search
   get 'welcome/about_us', to: 'welcome#about_us'
 end

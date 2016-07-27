@@ -11,16 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725003512) do
+ActiveRecord::Schema.define(version: 20160727004237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "faves", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "pet_id"
+  end
+
+  add_index "faves", ["pet_id"], name: "index_faves_on_pet_id", using: :btree
+  add_index "faves", ["user_id", "pet_id"], name: "index_faves_on_user_id_and_pet_id", unique: true, using: :btree
+  add_index "faves", ["user_id"], name: "index_faves_on_user_id", using: :btree
 
   create_table "pets", force: :cascade do |t|
     t.integer  "animal_type",  null: false
     t.string   "breed"
     t.integer  "age"
     t.integer  "sex"
+    t.string   "size"
     t.string   "name",         null: false
     t.string   "location"
     t.text     "description"
@@ -51,8 +61,13 @@ ActiveRecord::Schema.define(version: 20160725003512) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
