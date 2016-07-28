@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :faves
+  has_many :faves, class_name: :Fave
   has_many :pets, through: :faves
   has_many :faved_pets, through: :faves, source: :pets
 
@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :photo, content_type: /\Aimage/
   validates_attachment_size :photo, less_than: 3.megabytes
   validates :name, presence: true
+
+  def faved?(pet)
+    faves.where(pet_id: pet.id).present?
+  end
 end

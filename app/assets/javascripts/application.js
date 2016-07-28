@@ -15,4 +15,10 @@
 //= require foundation
 //= require_self
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $('.fave').on('ajax:success', function(e, data) {
+    $(this).text(data.faved ? 'Unfave' : 'Fave');
+  });
+
+  $(document).foundation();
+});

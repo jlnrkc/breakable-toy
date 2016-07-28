@@ -1,4 +1,4 @@
-<%= link_to "Fave", root_path %>
+<%= link_to current_user.faved?(@pet) ? 'Unfave' : 'Fave', pet_fave_path(@pet), remote: true, method: :post, class: 'fave' %>
 
 <div id="map"></div>
 
