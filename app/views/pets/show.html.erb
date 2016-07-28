@@ -1,0 +1,13 @@
+<%= link_to "Fave", root_path %>
+
+<div id="map"></div>
+
+<script>
+  var mapData = {
+    shelterAddress: '<%= @pet.shelter.location %>',
+    googleApiKey: '<%= ENV['GOOGLE_API_KEY'] %>'
+  };
+</script>
+<%- content_for :foot do %>
+  <%= javascript_include_tag 'pet' %>
+<%- end %>
