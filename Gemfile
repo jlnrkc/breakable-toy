@@ -9,7 +9,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'httparty'
 gem 'paperclip', '~> 4.2'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'pry-rails'
