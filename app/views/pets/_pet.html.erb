@@ -1,5 +1,8 @@
-<li>
+<div class="medium-6 large-4 columns pet">
+  <strong><%= link_to pet.name, pet %></strong>
+    <%= pet.breed %> <%= pet.animal_type %>
+    <p class="single-pet-search">
+      <%= pet.shelter.name %><em><%= pet.shelter.location %></em>
+    </p>
   <%= link_to current_user.faved?(pet) ? 'Unfave' : 'Fave', pet_fave_path(pet), remote: true, method: :post, class: 'fave' %>
-  <strong><%= link_to pet.name, pet %></strong>: <%= pet.breed %> <%= pet.animal_type %><br>
-  <%= pet.shelter.name %> – <em><%= pet.shelter.location %></em>
-</li>
+</div>

@@ -1,5 +1,39 @@
 #map {
-  border: 5px solid #fff;
-  height: 250px;
-  width: 250px;
+  border: 1px solid #fff;
+  height: 0;
+  padding-top: 75%;
+  width: 100%;
+}
+
+.pet-name {
+  font-weight: bold;
+  color: #2D1B33;
+}
+
+.shelter-name-display {
+  color: #2D1B33;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fave-pets {
+  list-style: circle;
+  color: #1D0B38;
+}
+
+@include breakpoint(medium only) {
+  .pet:nth-child(2n+1) {
+    clear: left;
+  }
+}
+
+@include breakpoint(large) {
+  .pet:nth-child(3n+1) {
+    clear: left;
+  }
+}
+
+h1 {
+  color: #CCCCCC;
+  font-size: 65px;
 }

@@ -1,31 +1,23 @@
-<div class="row">
-  <div class="small-12 columns">
-    <div class="form">
+<h4>Search for a pet</h4>
 
-      <h4>Search for a pet</h4>
+<%= form_tag(pets_search_path, method: :get) do %>
+  <%= label_tag(:animal_type) %>
+  <%= select_tag(:animal_type, options_for_select(Pet::ANIMAL_TYPES), prompt: "Select animal type") %>
 
-      <%= form_tag(pets_search_path, method: :get) do %>
-        <%= label_tag(:animal_type) %>
-        <%= select_tag(:animal_type, options_for_select(Pet::ANIMAL_TYPES), prompt: "Select animal type") %>
+  <%= label_tag(:breed) %>
+  <%= text_field_tag(:breed) %>
 
-        <%= label_tag(:breed) %>
-        <%= text_field_tag(:breed) %>
+  <%= label_tag(:age) %>
+  <%= select_tag(:age, options_for_select(Pet::AGES), prompt: "Select animal age") %>
 
-        <%= label_tag(:age) %>
-        <%= select_tag(:age, options_for_select(Pet::AGES), prompt: "Select animal age") %>
+  <%= label_tag(:size) %>
+  <%= select_tag(:size, options_for_select(Pet::SIZES), prompt: "Select animal size") %>
 
-        <%= label_tag(:size) %>
-        <%= select_tag(:size, options_for_select(Pet::SIZES), prompt: "Select animal size") %>
+  <%= label_tag(:sex) %>
+  <%= select_tag(:sex, options_for_select(Pet::SEXES), prompt: "Select animal sex") %>
 
-        <%= label_tag(:sex) %>
-        <%= select_tag(:sex, options_for_select(Pet::SEXES), prompt: "Select animal sex") %>
+  <%= label_tag(:name) %>
+  <%= text_field_tag(:name) %>
 
-        <%= label_tag(:name) %>
-        <%= text_field_tag(:name) %>
-
-        <%= submit_tag("Search") %>
-      <% end %>
-
-    </div>
-  </div>
-</div>
+  <%= submit_tag("Search") %>
+<% end %>

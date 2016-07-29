@@ -9,6 +9,7 @@ function initMap() {
   });
 }
 
+
 jQuery(document).ready(function($) {
   $('<script>', { src: 'https://maps.googleapis.com/maps/api/js?key=' + window.mapData.googleApiKey + '&callback=initMap' }).appendTo(document.body);
   $.getJSON(

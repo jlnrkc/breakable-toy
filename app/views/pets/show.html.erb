@@ -1,6 +1,16 @@
-<%= link_to current_user.faved?(@pet) ? 'Unfave' : 'Fave', pet_fave_path(@pet), remote: true, method: :post, class: 'fave' %>
-
-<div id="map"></div>
+<div class="row">
+  <div class="medium-6 columns">
+    <div class="single-pet-show">
+      <strong><%= link_to @pet.name, @pet %></strong>
+        <%= @pet.breed %> <%= @pet.animal_type %>
+        <p><%= @pet.shelter.name %><br><em><%= @pet.shelter.location %></em></p>
+      </div>
+        <%= link_to current_user.faved?(@pet) ? 'Unfave' : 'Fave', pet_fave_path(@pet), remote: true, method: :post, class: 'fave' %>
+  </div>
+  <div class="medium-6 columns">
+    <div id="map"></div>
+  </div>
+</div>
 
 <script>
   var mapData = {
