@@ -8,6 +8,7 @@
   </head>
   <body>
     <%= render partial: 'shared/navigation' %>
+    <div class='site-name'>pet rocket</div>
     <main>
       <%- flash.each do |type, val| %>
         <div data-closable class="callout<%= ' alert' if type == 'error' %><%= ' warning' if type == 'alert' %><%= ' success' if type == 'notice' %>">
